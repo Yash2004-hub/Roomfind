@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Room Details</title>
+    <link rel="stylesheet" href="/css/apply-room.css">
+    <script src="/js/apply-room.js" defer></script>
+</head>
+<body>
+	<!-- Header Section -->
+	<header th:fragment="header">
+	      <div class="logo">RoomFind</div>
+	      <nav>
+	          <ul>
+	              <li><a href="/home">Home</a></li>
+	              <li><a href="/profile">Profile</a></li>
+	              <li></li><a href="/apply">Apply Now</a></li>
+	              <li><a href="/pg">PG</a></li>
+				<li><a href="#">Notification</a></li>
+	          </ul>
+	      </nav>
+	  </header>
+    <div class="room-form-container">
+        <h2>Room Details Form</h2>
+        <form id="roomForm" th:action="@{/apply/room}" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="ownerId" th:value=${owner.ownerId} />
+
+            <!-- Room Number -->
+            <div class="form-group">
+				
+                <label for="roomNumber">Room Number:</label>
+                <input type="text" id="roomNumber" name="roomNo" required>
+            </div>
+
+            <!-- Room Size -->
+            <div class="form-group">
+                <label for="roomSize">Room Size (in sq ft):</label>
+                <input type="number" id="roomSize" name="roomSize" required>
+            </div>
+
+            <!-- Property Type -->
+            <div class="form-group">
+                <label for="propertyType">Property Type:</label>
+                <select id="propertyType" name="roomType" required>
+                    <option value="1RK">1 RK</option>
+                    <option value="1BHK">1 BHK</option>
+                    <option value="2BHK">2 BHK</option>
+                    <option value="3BHK">3 BHK</option>
+                    <option value="Studio">Studio</option>
+                    <option value="Villa">Villa</option>
+                </select>
+            </div>
+
+            <!-- Building Name -->
+            <div class="form-group">
+                <label for="buildingName">Building Name:</label>
+                <input type="text" id="buildingName" name="buildingName" required>
+            </div>
+
+            <!-- Area Name -->
+            <div class="form-group">
+                <label for="areaName">Area Name:</label>
+                <input type="text" id="areaName" name="areaName" required>
+            </div>
+
+            <!-- City -->
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+
+            <!-- Pincode -->
+            <div class="form-group">
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" required>
+            </div>
+
+            <!-- Available For -->
+            <div class="form-group">
+                <label for="availableFor">Available For:</label>
+                <select id="availableFor" name="availableFor" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="both">Both</option>
+                </select>
+            </div>
+
+            <!-- Price -->
+            <div class="form-group">
+                <label for="price">Price (per month):</label>
+                <input type="number" id="price" name="price" required>
+            </div>
+
+            <!-- Availability Status -->
+            <div class="form-group">
+                <label for="availabilityStatus">Availability Status:</label>
+                <select id="availabilityStatus" name="availabilityStatus" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <!-- Amenities -->
+            <div class="form-group amenities">
+                <label>Amenities:</label>
+                <label><input type="checkbox" name="amenities" value="wifi"> WiFi</label>
+                <label><input type="checkbox" name="amenities" value="ac"> AC</label>
+                <label><input type="checkbox" name="amenities" value="gym"> Gym</label>
+                <label><input type="checkbox" name="amenities" value="parking"> Parking</label>
+                <label><input type="checkbox" name="amenities" value="security"> Security</label>
+                <label><input type="checkbox" name="amenities" value="power_backup"> Power Backup</label>
+            </div>
+
+            <!-- Upload Room Images -->
+            <div class="form-group">
+                <label for="roomImages">Room Images (4-5 images):</label>
+                <input type="file" id="roomImages" name="images" accept="image/*" multiple>
+                <div id="roomImagePreview" style="margin-top: 10px;"></div>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Room Details</button>
+        </form>
+    </div>
+	<footer th:fragment="footer">
+			        <div class="footer-content">
+			            <p>&copy; 2024 RoomFind. All Rights Reserved.</p>
+			            <p>Your go-to platform for finding the ideal roommate. Contact us at <a href="mailto:support@roomfind.com">support@roomfind.com</a></p>
+			        </div>
+			    </footer>
+</body>
+</html>

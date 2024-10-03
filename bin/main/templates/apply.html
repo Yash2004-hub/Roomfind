@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply | RoomFind</title>
+    <link rel="stylesheet" type="text/css" href="/css/apply.css">
+    <script src="/js/apply.js" defer></script>
+</head>
+<body>
+	<!-- Header Section -->
+		<header th:fragment="header">
+		      <div class="logo">RoomFind</div>
+		      <nav>
+		          <ul>
+		              <li><a href="/home">Home</a></li>
+		              <li><a href="/profile">Profile</a></li>
+		              <li></li><a href="/apply">Apply Now</a></li>
+		              <li><a href="/pg">PG</a></li>
+					<li><a href="#">Notification</a></li>
+		          </ul>
+		      </nav>
+		  </header>
+    
+    <div class="apply-container">
+        <h1 class="apply-title">Apply as Room Seeker or Room Owner</h1>
+        
+        <div class="option-buttons">
+            <!-- Room Seeker Option -->
+            <button class="apply-option" onclick="selectOption('seeker')">
+                <div class="option-icon">
+                    <img src="/images/room-seeker.jpg" alt="Room Seeker Icon">
+                </div>
+                <span class="option-text">Room Seeker</span>
+            </button>
+            
+            <!-- Room Owner Option -->
+            <button class="apply-option" onclick="selectOption('owner')">
+                <div class="option-icon">
+                    <img src="/images/room-owner.jpg" alt="Room Owner Icon">
+                </div>
+                <span class="option-text">Room Owner</span>
+            </button>
+        </div>
+
+        <div id="redirect-buttons" class="hidden">
+            <!-- Redirect button for Room Seeker (future implementation) -->
+            <button id="seeker-button" class="redirect-button" onclick="redirectToSeeker()">
+                Continue as Room Seeker
+            </button>
+            
+            <!-- Redirect button for Room Owner -->
+            <button id="owner-button" class="redirect-button" onclick="redirectToOwner()">
+                Continue as Room Owner
+            </button>
+        </div>
+    </div>
+	<footer th:fragment="footer">
+		        <div class="footer-content">
+		            <p>&copy; 2024 RoomFind. All Rights Reserved.</p>
+		            <p>Your go-to platform for finding the ideal roommate. Contact us at <a href="mailto:support@roomfind.com">support@roomfind.com</a></p>
+		        </div>
+		    </footer>
+    </body>
+</html>

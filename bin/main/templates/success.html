@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Success Page</title>
+    <!-- Link to an external CSS file -->
+    <link rel="stylesheet" th:href="@{/css/success.css}">
+</head>
+<body>
+	<!-- Header Section -->
+	<header th:fragment="header">
+	      <div class="logo">RoomFind</div>
+	      <nav>
+	          <ul>
+	              <li><a href="/home">Home</a></li>
+	              <li><a href="/profile">Profile</a></li>
+	              <li></li><a href="/apply">Apply Now</a></li>
+	              <li><a href="/pg">PG</a></li>
+				<li><a href="#">Notification</a></li>
+	          </ul>
+	      </nav>
+	  </header>
+
+    <div class="container">
+        <h1>Form Submitted Successfully!</h1>
+        <p>Your details have been saved successfully.</p>
+        
+        <div class="links">
+            <!-- Links to Profile and PG sections -->
+            <a class="button" th:href="@{/profile}">Go to Profile Section</a>
+            <a class="button" th:href="@{/pg}">View PG Section</a>
+        </div>
+    </div>
+
+	<!-- Footer Section -->
+		<footer th:fragment="footer">
+		        <div class="footer-content">
+		            <p>&copy; 2024 RoomFind. All Rights Reserved.</p>
+		            <p>Your go-to platform for finding the ideal roommate. Contact us at <a href="mailto:support@roomfind.com">support@roomfind.com</a></p>
+		        </div>
+		    </footer>
+			<script th:src="@{/js/success.js}"></script>
+</body>
+</html>

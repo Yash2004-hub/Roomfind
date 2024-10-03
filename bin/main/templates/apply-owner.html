@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply as Room Owner</title>
+    <link rel="stylesheet" href="/css/apply-owner.css">
+    <script src="/js/apply-owner.js" defer></script>
+</head>
+<body>
+	<!-- Header Section -->
+	<header th:fragment="header">
+	      <div class="logo">RoomFind</div>
+	      <nav>
+	          <ul>
+	              <li><a href="/home">Home</a></li>
+	              <li><a href="/profile">Profile</a></li>
+	              <li></li><a href="/apply">Apply Now</a></li>
+	              <li><a href="/pg">PG</a></li>
+				<li><a href="#">Notification</a></li>
+	          </ul>
+	      </nav>
+	  </header>
+    <div class="container">
+        <h2>Apply as Room Owner</h2>
+        <form id="ownerForm" th:action="@{/apply/owner}" method="post" enctype="multipart/form-data">
+            
+            <!-- Owner Name -->
+            <div class="form-group">
+                <label for="ownerName">Name:</label>
+                <input type="text" id="ownerName" name="name" required>
+            </div>
+
+            <!-- Owner Phone -->
+            <div class="form-group">
+                <label for="ownerPhone">Phone Number:</label>
+                <input type="tel" id="ownerPhone" name="phoneNo" required>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="ownerDob">Date of Birth:</label>
+                <input type="date" id="ownerDob" name="dob" required>
+            </div>
+
+            <!-- Preferences -->
+            <div class="form-group">
+                <label for="preferences">Preferences:</label>
+                <select id="preferences" name="preferences" multiple>
+                    <option value="veggie">Veggie</option>
+                    <option value="foodie">Foodie</option>
+                    <option value="traveler">Traveler</option>
+                    <option value="gym-lover">Gym Lover</option>
+                    <option value="quiet">Pet Lover</option>
+                    
+                </select>
+            </div>
+
+            <!-- Upload Image -->
+            <div class="form-group">
+                <label for="ownerImage">Profile Image:</label>
+                <input type="file" id="ownerImage" name="imageFile" accept="image/*">
+                <div>
+                    <img id="imagePreview" style="max-width: 200px; margin-top: 10px;">
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+	<!-- Footer Section -->
+		<footer th:fragment="footer">
+		        <div class="footer-content">
+		            <p>&copy; 2024 RoomFind. All Rights Reserved.</p>
+		            <p>Your go-to platform for finding the ideal roommate. Contact us at <a href="mailto:support@roomfind.com">support@roomfind.com</a></p>
+		        </div>
+		    </footer>
+</body>
+</html>

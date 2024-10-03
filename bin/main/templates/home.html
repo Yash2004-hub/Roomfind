@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomFind - Find Your Perfect Roommate</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+	<!-- Header Section -->
+	<header th:fragment="header">
+	      <div class="logo">RoomFind</div>
+	      <nav>
+	          <ul>
+	              <li><a href="/home">Home</a></li>
+	              <li><a href="/profile">Profile</a></li>
+	              <li></li><a href="/apply">Apply Now</a></li>
+	              <li><a href="/pg">PG</a></li>
+				<li><a href="#">Notification</a></li>
+	          </ul>
+	      </nav>
+	  </header>
+
+    <!-- Hero Section with Image Carousel -->
+    <section class="hero">
+        <div class="hero-images">
+            <img src="/images/hero1.jpg" alt="Hero Image 1" class="active">
+            <img src="/images/hero2.jpg" alt="Hero Image 2">
+            <img src="/images/hero3.jpg" alt="Hero Image 3">
+            <img src="/images/hero4.jpg" alt="Hero Image 4">
+            <img src="/images/hero5.jpg" alt="Hero Image 5">
+            
+        </div>
+        <div class="hero-content">
+            <h1>Find Your Perfect Roommate</h1>
+            <p>Join our community and start your search today.</p>
+            <a href="/apply" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="info">
+        <h2>Why Choose RoomFind?</h2>
+        <div class="info-cards">
+            <div class="card">
+                <h3>Easy to Use</h3>
+                <p>Our platform is simple and intuitive, designed to help you find the best roommate quickly and easily.</p>
+            </div>
+            <div class="card">
+                <h3>Secure & Reliable</h3>
+                <p>We take your privacy seriously, ensuring all your information is safe and secure.</p>
+            </div>
+            <div class="card">
+                <h3>Wide Reach</h3>
+                <p>With RoomFind, you have access to a large network of potential roommates in your area.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+	<!-- Footer Section -->
+	<footer th:fragment="footer">
+	        <div class="footer-content">
+	            <p>&copy; 2024 RoomFind. All Rights Reserved.</p>
+	            <p>Your go-to platform for finding the ideal roommate. Contact us at <a href="mailto:support@roomfind.com">support@roomfind.com</a></p>
+	        </div>
+	    </footer>
+
+	   <script src="/js/index.js"></script>
+	</body>
+	</html>
